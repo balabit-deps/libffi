@@ -1,3 +1,9 @@
+libffi (3.0.13-2.syslogng70.0) syslogng70; urgency=medium
+
+  * Correction of pc file
+
+ -- Viktor Juhasz <viktor.juhasz@balabit.com>  Fri, 11 Nov 2016 09:52:37 +0100
+
 libffi (3.0.13-1.syslogng70.0) syslogng70; urgency=low
 
   * Initial changelog
