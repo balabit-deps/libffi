@@ -1,0 +1,22 @@
+source="libffi"
+version=3.0.13-pe-1
+
+check_rpath_skip_list=("${prefix}/lib/libffi.so*")
+
+bootstrap() {
+  autoreconf -i
+}
+
+build() {
+  cd "${build_dir}"
+
+  # RPATH is broken
+  ${src_dir}/configure --prefix="${prefix}" LDFLAGS="-L${prefix}/lib" --disable-multi-os-directory
+
+  make
+}
+
+install() {
+  cd "${build_dir}"
+  make DESTDIR="${dest_dir}" install
+}
